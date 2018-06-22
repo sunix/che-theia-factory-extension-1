@@ -62,7 +62,7 @@ Open http://localhost:3000 in the browser.
 
 ## Developing with the browser example
 
-Start watching of the hello world extension.
+Start watching of the extension.
 
     cd che-theia-factory-frontend-extension
     yarn watch
