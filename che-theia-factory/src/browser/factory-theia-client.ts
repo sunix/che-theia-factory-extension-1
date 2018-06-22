@@ -16,7 +16,7 @@ import { EnvVariablesServer, EnvVariable } from "@theia/core/lib/common/env-vari
 import { FactoryService } from "./resources";
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { Git, Repository } from "@theia/git/lib/common";
-import { IFactory } from "./types.d"
+import { IFactory } from "./types"
 import { IProjectConfig } from "@eclipse-che/workspace-client";
 
 const queryString = require('query-string');
