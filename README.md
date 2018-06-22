@@ -23,12 +23,12 @@ When:
 3. Checkout the specific branch for one of the project.
 3. Create a new factory from the created workspace.
 4. Edit the factory and select `from a stack` and `Java Theia (OpenShift)`
-5. Edit the configuration and add to the theia machine the environment variable THEIA_PLUGINS
+5. Edit the configuration and add to the theia machine the environment variable THEIA_EXTENSIONS
 
 
             "env": {
               "CHE_MACHINE_NAME": "ws/theia",
-              "THEIA_PLUGINS": "che-theia-factory:https://github.com/eclipse/che-theia-factory-extension.git"
+              "THEIA_EXTENSIONS": "che-theia-factory:https://github.com/eclipse/che-theia-factory-extension.git"
             }
 
 Then:
