@@ -77,20 +77,6 @@ Launch `Start Browser Backend` configuration from VS code.
 
 Open http://localhost:3000 in the browser.
 
-## Developing with the Electron example
-
-Start watching of the extension.
-
-    cd che-theia-factory-frontend-extension
-    yarn watch
-
-Start watching of the electron example.
-
-    yarn rebuild:electron
-    cd electron-app
-    yarn watch
-
-Launch `Start Electron Backend` configuration from VS code.
 
 ## Publishing extension
 
