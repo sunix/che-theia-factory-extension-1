@@ -11,11 +11,11 @@
 
 import { AxiosInstance, AxiosPromise } from 'axios';
 
-export interface IResources {
+export interface IFactoryService {
     getById: <T>(workspaceKey: string) => AxiosPromise<T>;
 }
 
-export class Resources implements IResources {
+export class FactoryService implements IFactoryService {
 
     private readonly factoryUrl = '/factory';
 

@@ -13,7 +13,7 @@ import { injectable, inject } from "inversify";
 import { MessageService } from "@theia/core/lib/common";
 import { FrontendApplicationContribution, FrontendApplication } from '@theia/core/lib/browser';
 import { EnvVariablesServer, EnvVariable } from "@theia/core/lib/common/env-variables";
-import { Resources } from "./resources";
+import { FactoryService } from "./resources";
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { Git, Repository } from "@theia/git/lib/common";
 import { IFactory } from "./types.d"
@@ -56,7 +56,7 @@ export class FactoryTheiaClient implements FrontendApplicationContribution {
             projectsRoot = projectsRootEnvVar.value;
         }
 
-        const factory = new Resources(FactoryTheiaClient.axiosInstance, String(cheApiExternalVar.value));
+        const factory = new FactoryService(FactoryTheiaClient.axiosInstance, String(cheApiExternalVar.value));
         const response: AxiosResponse<IFactory> = await factory.getById<IFactory>(factoryid);
 
         response.data.workspace.projects.forEach((project: IProjectConfig) => {
