@@ -16,7 +16,6 @@ import { FrontendApplicationContribution } from '@theia/core/lib/browser';
 import { ContainerModule } from "inversify";
 
 export default new ContainerModule(bind => {
-
     bind(FactoryTheiaClient).toSelf().inSingletonScope();
     bind(FrontendApplicationContribution).toDynamicValue(c => c.container.get(FactoryTheiaClient));
 });

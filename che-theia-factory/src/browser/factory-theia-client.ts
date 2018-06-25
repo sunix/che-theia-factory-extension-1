@@ -26,7 +26,7 @@ export class FactoryTheiaClient implements FrontendApplicationContribution {
 
     private static axiosInstance: AxiosInstance = axios;
 
-    private envVariables:EnvVariable[]|undefined;
+    private envVariables: EnvVariable[] | undefined;
 
     constructor(
         @inject(MessageService) private readonly messageService: MessageService,
@@ -41,11 +41,11 @@ export class FactoryTheiaClient implements FrontendApplicationContribution {
         }
 
         this.envVariables = await this.envVariablesServer.getVariables();
-        if(!this.envVariables){
+        if (!this.envVariables) {
             return;
         }
 
-        const cheApiExternalVar =  this.getEnvVariable('CHE_API_EXTERNAL');
+        const cheApiExternalVar = this.getEnvVariable('CHE_API_EXTERNAL');
         if (!cheApiExternalVar) {
             return;
         }
@@ -69,29 +69,29 @@ export class FactoryTheiaClient implements FrontendApplicationContribution {
 
             this.messageService.info(`Cloning ... ${source.location} to ${projectPath}...`)
 
-                this.git.clone(
-                    source.location,
-                    {
-                        localUri: projectPath
+            this.git.clone(
+                source.location,
+                {
+                    localUri: projectPath
+                }
+            ).then(
+                (repo: Repository) => {
+                    this.messageService.info(`Project ${projectPath} successfully cloned.`);
+                    if (source.parameters['branch']) {
+                        const options: Git.Options.Checkout.CheckoutBranch = { branch: source.parameters['branch'] };
+                        this.git.checkout(repo, options);
                     }
-                ).then(
-                    (repo: Repository) => {
-                        this.messageService.info(`Project ${projectPath} successfully cloned.`);
-                        if (source.parameters['branch']) {
-                            const options: Git.Options.Checkout.CheckoutBranch = { branch: source.parameters['branch'] };
-                            this.git.checkout(repo, options);
-                        }
-                    }
-                ).catch((error) => {
-                    console.error(`Couldn't clone ${source.location} to ${projectPath}... ${error}`);
-                    this.messageService.error(`Couldn't clone ${source.location} to ${projectPath}... ${error}`);
-                });
+                }
+            ).catch((error) => {
+                console.error(`Couldn't clone ${source.location} to ${projectPath}... ${error}`);
+                this.messageService.error(`Couldn't clone ${source.location} to ${projectPath}... ${error}`);
+            });
 
         });
     }
 
-    getEnvVariable(name: string):EnvVariable|undefined{
-        if(!this.envVariables){
+    getEnvVariable(name: string): EnvVariable | undefined {
+        if (!this.envVariables) {
             return undefined;
         }
         return this.envVariables.find(function(envVariable) { return envVariable.name === name });
