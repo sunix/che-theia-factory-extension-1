@@ -21,6 +21,13 @@ import { IProjectConfig } from "@eclipse-che/workspace-client";
 
 const queryString = require('query-string');
 
+/**
+ * Provides basic factory client side features at startup of the browser IDE:
+ * - checking/retriving factory-id from URL
+ * - request che factory api to get the factory definition
+ * - clone the projects defined in the factory definition
+ * - checkout branch if needed
+ */
 @injectable()
 export class FactoryTheiaClient implements FrontendApplicationContribution {
 
