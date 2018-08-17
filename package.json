@@ -4,6 +4,7 @@
     "prepare": "lerna run prepare",
     "rebuild:browser": "theia rebuild:browser"
   },
+  "license": "EPL-2.0",
   "devDependencies": {
     "lerna": "2.4.0"
   },
