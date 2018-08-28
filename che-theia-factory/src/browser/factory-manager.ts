@@ -12,11 +12,10 @@ import { injectable, inject } from 'inversify';
 import { FactoryService, IFactoryService } from './resources';
 import { EnvVariablesServer } from '@theia/core/lib/common/env-variables';
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { IFactory, IFactoryAction } from './types'
+import { IFactory, IFactoryAction } from './types';
 import { IProjectConfig } from '@eclipse-che/workspace-client';
 
 const queryString = require('query-string');
-
 
 @injectable()
 export class FactoryTheiaManager {
