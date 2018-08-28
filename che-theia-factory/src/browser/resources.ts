@@ -22,7 +22,6 @@ export class FactoryService implements IFactoryService {
         private readonly baseUrl: string) {
     }
 
-
     public getById<T>(factoryId: string): AxiosPromise<T> {
         return this.axios.request<T>({
             method: 'GET',

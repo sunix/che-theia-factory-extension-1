@@ -157,7 +157,7 @@ export class FactoryTheiaClient implements FrontendApplicationContribution {
                         console.error(errorMessage);
                         this.messageService.error(errorMessage);
                         return Promise.resolve();
-                    })
+                    });
                 }
             ).catch((error) => {
                 const errorMessage = `Couldn't clone ${source.location} to ${projectPath}... ${error}`;
@@ -187,7 +187,7 @@ export class FactoryTheiaClient implements FrontendApplicationContribution {
             return undefined;
         }
         return this.envVariables.find((envVariable) => {
-            return envVariable.name === name
+            return envVariable.name === name;
         });
     }
 }

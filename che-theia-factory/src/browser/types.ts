@@ -10,7 +10,6 @@
 
 import { IWorkspaceConfig } from "@eclipse-che/workspace-client";
 
-
 export interface IFactory {
     workspace: IWorkspaceConfig;
     ide?: {
