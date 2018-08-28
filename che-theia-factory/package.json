@@ -10,14 +10,14 @@
   ],
   "dependencies": {
     "@eclipse-che/workspace-client": "latest",
-    "@theia/core": "0.3.12",
-    "@theia/editor": "0.3.12",
-    "@theia/git": "0.3.12",
+    "@theia/core": "0.3.13",
+    "@theia/editor": "0.3.13",
+    "@theia/git": "0.3.13",
     "axios": "0.18.0"
   },
   "devDependencies": {
     "rimraf": "2.6.2",
-    "typescript": "2.7.2"
+    "typescript": "2.9.2"
   },
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
