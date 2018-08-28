@@ -1,12 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "lerna run prepare",
-    "rebuild:browser": "theia rebuild:browser"
+    "prepare": "yarn tslint && lerna run prepare",
+    "rebuild:browser": "theia rebuild:browser",
+    "tslint-fix": "tslint --fix --project che-theia-factory",
+    "tslint": "tslint --project che-theia-factory"
   },
   "license": "EPL-2.0",
   "devDependencies": {
-    "lerna": "2.4.0"
+    "lerna": "2.4.0",
+    "tslint": "5.10.0"
   },
   "workspaces": [
     "che-theia-factory",
